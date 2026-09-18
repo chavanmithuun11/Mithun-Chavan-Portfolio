@@ -3294,3 +3294,1776 @@ button {
     }
 
 }
+
+/* =========================================================
+   FINAL PROFILE PHOTO + SOCIAL LINKS
+   ========================================================= */
+
+.hero-avatar.blend-photo {
+    width: 300px !important;
+    height: 410px !important;
+    left: auto !important;
+    right: 4vw !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    z-index: 4 !important;
+    pointer-events: auto !important;
+    overflow: hidden !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.hero-avatar.blend-photo img {
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+    border-radius: 24px !important;
+    filter: brightness(1) contrast(1.02) saturate(1) !important;
+}
+
+.hero-socials {
+    position: relative;
+    z-index: 50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+.hero-socials a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: 0 14px;
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 999px;
+    color: #d8d8d8;
+    background: rgba(255,255,255,.04);
+    font-family: var(--font-mono);
+    font-size: .68rem;
+    letter-spacing: .04em;
+    text-decoration: none;
+    transition: transform .25s ease, border-color .25s ease, color .25s ease, background .25s ease;
+}
+
+.hero-socials a:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255,255,255,.4);
+    color: #fff;
+    background: rgba(255,255,255,.09);
+}
+
+.hero-socials svg {
+    width: 17px;
+    height: 17px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+@media (max-width: 1100px) {
+    .hero-avatar.blend-photo {
+        width: 250px !important;
+        height: 350px !important;
+        right: 2vw !important;
+    }
+}
+
+@media (max-width: 760px) {
+    .hero-avatar.blend-photo {
+        position: relative !important;
+        width: 210px !important;
+        height: 290px !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        transform: none !important;
+        margin: 25px auto 5px !important;
+    }
+
+    .hero-socials {
+        margin-top: 20px;
+        gap: 8px;
+    }
+
+    .hero-socials a {
+        min-height: 38px;
+        padding: 0 11px;
+        font-size: .62rem;
+    }
+}
+
+/* =========================================================
+   FINAL HERO PHOTO + 3D SIDE ANIMATION
+   ========================================================= */
+
+/* Main hero layout */
+.hero.section {
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* Keep the name/text away from the photo */
+.hero-content {
+    position: relative !important;
+    z-index: 10 !important;
+
+    width: min(850px, 62vw) !important;
+    margin-left: 6vw !important;
+    margin-right: auto !important;
+
+    text-align: left !important;
+}
+
+/* Keep the large name inside its own space */
+.hero-title-wrapper {
+    position: relative !important;
+    width: 100% !important;
+    z-index: 12 !important;
+}
+
+.hero-title {
+    max-width: 850px !important;
+    margin: 0 !important;
+
+    font-size: clamp(5rem, 8vw, 9rem) !important;
+    line-height: 0.86 !important;
+    letter-spacing: -0.065em !important;
+}
+
+/* Description */
+.hero-description {
+    max-width: 700px !important;
+    margin-left: 0 !important;
+}
+
+/* Buttons */
+.hero-actions {
+    justify-content: flex-start !important;
+}
+
+/* =========================================================
+   PHOTO ON RIGHT SIDE
+   ========================================================= */
+
+.hero-avatar,
+.hero-avatar.blend-photo {
+    position: absolute !important;
+
+    width: 300px !important;
+    height: 420px !important;
+
+    right: 6vw !important;
+    left: auto !important;
+
+    top: 50% !important;
+
+    transform: translateY(-50%) !important;
+
+    z-index: 5 !important;
+
+    display: block !important;
+
+    border-radius: 28px !important;
+
+    overflow: hidden !important;
+
+    isolation: isolate !important;
+
+    /* 3D depth */
+    perspective: 1000px !important;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.45),
+        0 0 50px rgba(168, 70, 255, 0.15) !important;
+
+    animation: heroPhotoFloat 5s ease-in-out infinite !important;
+
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease !important;
+}
+
+/* Photo itself */
+.hero-avatar img,
+.hero-avatar.blend-photo img,
+.avatar-image img {
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+
+    display: block !important;
+
+    border-radius: 28px !important;
+
+    transform: scale(1.02) !important;
+
+    transition:
+        transform 0.6s ease,
+        filter 0.6s ease !important;
+}
+
+/* 3D hover effect */
+.hero-avatar:hover,
+.hero-avatar.blend-photo:hover {
+    animation-play-state: paused !important;
+
+    transform:
+        translateY(-50%)
+        rotateY(-7deg)
+        rotateX(3deg)
+        scale(1.025) !important;
+
+    box-shadow:
+        0 35px 90px rgba(0, 0, 0, 0.55),
+        0 0 70px rgba(168, 70, 255, 0.28) !important;
+}
+
+.hero-avatar:hover img,
+.hero-avatar.blend-photo:hover img {
+    transform: scale(1.07) !important;
+}
+
+/* Floating 3D animation */
+@keyframes heroPhotoFloat {
+
+    0% {
+        transform:
+            translateY(-50%)
+            rotateY(-2deg)
+            rotateX(1deg);
+    }
+
+    25% {
+        transform:
+            translateY(calc(-50% - 8px))
+            rotateY(2deg)
+            rotateX(-1deg);
+    }
+
+    50% {
+        transform:
+            translateY(-50%)
+            rotateY(4deg)
+            rotateX(1deg);
+    }
+
+    75% {
+        transform:
+            translateY(calc(-50% + 8px))
+            rotateY(1deg)
+            rotateX(2deg);
+    }
+
+    100% {
+        transform:
+            translateY(-50%)
+            rotateY(-2deg)
+            rotateX(1deg);
+    }
+}
+
+/* Soft glass/highlight effect */
+.hero-avatar::after {
+    content: "" !important;
+
+    position: absolute !important;
+
+    inset: 0 !important;
+
+    border-radius: 28px !important;
+
+    pointer-events: none !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.16),
+            transparent 35%,
+            transparent 70%,
+            rgba(168,70,255,0.12)
+        ) !important;
+
+    z-index: 3 !important;
+
+    mix-blend-mode: screen !important;
+}
+
+/* =========================================================
+   SOCIAL LINKS
+   ========================================================= */
+
+.hero-socials {
+    position: relative !important;
+    z-index: 20 !important;
+
+    display: flex !important;
+
+    justify-content: flex-start !important;
+
+    gap: 10px !important;
+
+    margin-top: 28px !important;
+}
+
+.hero-socials a {
+    display: inline-flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    min-width: 110px !important;
+    min-height: 42px !important;
+
+    padding: 0 15px !important;
+
+    border: 1px solid rgba(255,255,255,0.15) !important;
+
+    border-radius: 999px !important;
+
+    color: #ffffff !important;
+
+    background: rgba(255,255,255,0.035) !important;
+
+    text-decoration: none !important;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease !important;
+}
+
+.hero-socials a:hover {
+    transform: translateY(-4px) !important;
+
+    border-color: rgba(255,255,255,0.4) !important;
+
+    background: rgba(255,255,255,0.08) !important;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .hero-content {
+        width: min(700px, 58vw) !important;
+        margin-left: 5vw !important;
+    }
+
+    .hero-title {
+        font-size: clamp(4.5rem, 8vw, 7rem) !important;
+    }
+
+    .hero-avatar,
+    .hero-avatar.blend-photo {
+        width: 250px !important;
+        height: 350px !important;
+
+        right: 3vw !important;
+    }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .hero.section {
+        overflow: visible !important;
+    }
+
+    .hero-content {
+        width: 100% !important;
+
+        margin: 0 auto !important;
+
+        padding: 0 20px !important;
+
+        text-align: center !important;
+    }
+
+    .hero-title {
+        font-size: clamp(3.5rem, 17vw, 6rem) !important;
+
+        line-height: 0.88 !important;
+
+        text-align: center !important;
+    }
+
+    .hero-description {
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        text-align: center !important;
+    }
+
+    .hero-actions {
+        justify-content: center !important;
+    }
+
+    .hero-socials {
+        justify-content: center !important;
+
+        flex-wrap: wrap !important;
+    }
+
+    .hero-avatar,
+    .hero-avatar.blend-photo {
+        position: relative !important;
+
+        width: 210px !important;
+        height: 290px !important;
+
+        top: auto !important;
+        right: auto !important;
+        left: auto !important;
+
+        transform: none !important;
+
+        margin: 35px auto 10px !important;
+
+        animation: heroPhotoMobileFloat 4s ease-in-out infinite !important;
+    }
+
+    .hero-avatar:hover,
+    .hero-avatar.blend-photo:hover {
+        transform: scale(1.02) !important;
+    }
+}
+
+/* Mobile floating animation */
+@keyframes heroPhotoMobileFloat {
+
+    0% {
+        transform: translateY(0) rotateY(-2deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotateY(3deg);
+    }
+
+    100% {
+        transform: translateY(0) rotateY(-2deg);
+    }
+}
+
+/* =========================================================
+   FINAL FIX — PHOTO COMPLETELY OUTSIDE THE NAME
+   ========================================================= */
+
+/* Hero itself becomes the photo's positioning area */
+.hero.section {
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* Text stays completely separate from the photo */
+.hero-content {
+    position: static !important;
+    width: 60% !important;
+    max-width: 900px !important;
+    margin-left: 7vw !important;
+    margin-right: 0 !important;
+    z-index: 20 !important;
+}
+
+/* Keep the large name on the left */
+.hero-title-wrapper {
+    position: relative !important;
+    z-index: 30 !important;
+}
+
+.hero-title {
+    position: relative !important;
+    z-index: 30 !important;
+    max-width: 850px !important;
+}
+
+/* =========================================================
+   PHOTO — FAR RIGHT, NEVER BEHIND THE NAME
+   ========================================================= */
+
+.hero-avatar,
+.hero-avatar.blend-photo {
+    position: absolute !important;
+
+    width: 300px !important;
+    height: 420px !important;
+
+    /* FAR RIGHT */
+    right: 5vw !important;
+    left: auto !important;
+
+    /* Vertical center */
+    top: 50% !important;
+
+    /* Only vertical transform */
+    transform: translateY(-50%) !important;
+
+    margin: 0 !important;
+
+    z-index: 5 !important;
+
+    display: block !important;
+
+    overflow: hidden !important;
+
+    border-radius: 30px !important;
+
+    /* 3D depth */
+    perspective: 1000px !important;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.55),
+        0 0 45px rgba(168, 70, 255, 0.18) !important;
+
+    animation: mithunPhotoFloat 5s ease-in-out infinite !important;
+}
+
+/* Actual image */
+.hero-avatar img,
+.hero-avatar.blend-photo img,
+.avatar-image img {
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+
+    display: block !important;
+
+    border-radius: 30px !important;
+
+    transform: scale(1.02) !important;
+
+    transition: transform 0.6s ease !important;
+}
+
+/* Glass highlight */
+.hero-avatar::after,
+.hero-avatar.blend-photo::after {
+    content: "" !important;
+
+    position: absolute !important;
+
+    inset: 0 !important;
+
+    border-radius: 30px !important;
+
+    pointer-events: none !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.18),
+            transparent 35%,
+            transparent 70%,
+            rgba(168,70,255,0.12)
+        ) !important;
+
+    z-index: 3 !important;
+}
+
+/* =========================================================
+   3D HOVER
+   ========================================================= */
+
+.hero-avatar:hover,
+.hero-avatar.blend-photo:hover {
+    animation-play-state: paused !important;
+
+    transform:
+        translateY(-50%)
+        rotateY(-8deg)
+        rotateX(4deg)
+        scale(1.03) !important;
+
+    box-shadow:
+        0 40px 100px rgba(0, 0, 0, 0.6),
+        0 0 65px rgba(168, 70, 255, 0.28) !important;
+}
+
+.hero-avatar:hover img,
+.hero-avatar.blend-photo:hover img {
+    transform: scale(1.08) !important;
+}
+
+/* =========================================================
+   FLOATING 3D ANIMATION
+   ========================================================= */
+
+@keyframes mithunPhotoFloat {
+
+    0% {
+        transform:
+            translateY(-50%)
+            rotateY(-2deg)
+            rotateX(1deg);
+    }
+
+    25% {
+        transform:
+            translateY(calc(-50% - 7px))
+            rotateY(2deg)
+            rotateX(-1deg);
+    }
+
+    50% {
+        transform:
+            translateY(-50%)
+            rotateY(4deg)
+            rotateX(1deg);
+    }
+
+    75% {
+        transform:
+            translateY(calc(-50% + 7px))
+            rotateY(1deg)
+            rotateX(2deg);
+    }
+
+    100% {
+        transform:
+            translateY(-50%)
+            rotateY(-2deg)
+            rotateX(1deg);
+    }
+}
+
+/* =========================================================
+   SOCIAL LINKS — KEEP UNDER TEXT
+   ========================================================= */
+
+.hero-socials {
+    position: relative !important;
+    z-index: 40 !important;
+
+    display: flex !important;
+    justify-content: flex-start !important;
+
+    gap: 10px !important;
+
+    margin-top: 28px !important;
+}
+
+/* =========================================================
+   LARGE SCREENS
+   ========================================================= */
+
+@media (min-width: 1400px) {
+
+    .hero-content {
+        width: 62% !important;
+        max-width: 950px !important;
+        margin-left: 7vw !important;
+    }
+
+    .hero-avatar,
+    .hero-avatar.blend-photo {
+        width: 330px !important;
+        height: 450px !important;
+
+        right: 6vw !important;
+    }
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) and (min-width: 761px) {
+
+    .hero-content {
+        width: 58% !important;
+        max-width: 700px !important;
+        margin-left: 5vw !important;
+    }
+
+    .hero-title {
+        font-size: clamp(4rem, 7vw, 6.5rem) !important;
+    }
+
+    .hero-avatar,
+    .hero-avatar.blend-photo {
+        width: 240px !important;
+        height: 340px !important;
+
+        right: 3vw !important;
+    }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .hero.section {
+        overflow: visible !important;
+    }
+
+    .hero-content {
+        position: relative !important;
+
+        width: 100% !important;
+
+        max-width: none !important;
+
+        margin: 0 auto !important;
+
+        padding: 0 20px !important;
+
+        text-align: center !important;
+    }
+
+    .hero-title {
+        font-size: clamp(3.4rem, 16vw, 6rem) !important;
+
+        text-align: center !important;
+    }
+
+    .hero-description {
+        text-align: center !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .hero-actions {
+        justify-content: center !important;
+    }
+
+    .hero-socials {
+        justify-content: center !important;
+
+        flex-wrap: wrap !important;
+    }
+
+    .hero-avatar,
+    .hero-avatar.blend-photo {
+        position: relative !important;
+
+        width: 210px !important;
+        height: 290px !important;
+
+        top: auto !important;
+        right: auto !important;
+        left: auto !important;
+
+        transform: none !important;
+
+        margin: 35px auto 10px !important;
+
+        animation: mithunMobileFloat 4s ease-in-out infinite !important;
+    }
+
+    .hero-avatar:hover,
+    .hero-avatar.blend-photo:hover {
+        transform: scale(1.02) !important;
+    }
+}
+
+@keyframes mithunMobileFloat {
+
+    0% {
+        transform: translateY(0) rotateY(-2deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotateY(3deg);
+    }
+
+    100% {
+        transform: translateY(0) rotateY(-2deg);
+    }
+}
+/* =========================================================
+   FINAL HERO PHOTO POSITION
+   Keep profile photo completely separate from the name
+   ========================================================= */
+
+.hero-avatar.blend-photo {
+    position: absolute !important;
+    top: 50% !important;
+    right: 8vw !important;
+    left: auto !important;
+    width: 300px !important;
+    height: 440px !important;
+    margin: 0 !important;
+    transform: translateY(-50%) !important;
+    z-index: 10 !important;
+    overflow: hidden !important;
+    border-radius: 28px !important;
+    isolation: isolate !important;
+}
+
+/* Photo itself */
+.hero-avatar.blend-photo img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+    border-radius: 28px !important;
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+/* Remove the old text-blending effect */
+.hero-avatar.blend-photo::before,
+.hero-avatar.blend-photo::after {
+    display: none !important;
+}
+
+/* Keep your name completely in front/independent */
+.hero-title,
+.hero-title-wrapper,
+.hero-name {
+    position: relative !important;
+    z-index: 20 !important;
+}
+
+/* Desktop */
+@media (min-width: 1101px) {
+    .hero-avatar.blend-photo {
+        right: 7vw !important;
+        width: 300px !important;
+        height: 440px !important;
+    }
+}
+
+/* Laptop */
+@media (max-width: 1400px) and (min-width: 1101px) {
+    .hero-avatar.blend-photo {
+        right: 5vw !important;
+        width: 280px !important;
+        height: 410px !important;
+    }
+}
+
+/* Tablet/mobile */
+@media (max-width: 1100px) {
+    .hero-avatar.blend-photo {
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        left: auto !important;
+        transform: none !important;
+        width: 280px !important;
+        height: 400px !important;
+        margin: 35px auto !important;
+    }
+}
+
+@media (max-width: 760px) {
+    .hero-avatar.blend-photo {
+        width: 230px !important;
+        height: 330px !important;
+        margin: 30px auto !important;
+    }
+}
+
+
+/* ==========================================================
+   FINAL FIX — SEPARATE NAME FROM PROFILE PHOTO
+   ========================================================== */
+
+/* Make MITHUN CHAVAN normal text — NO PHOTO INSIDE LETTERS */
+.hero-name {
+    background: none !important;
+    background-image: none !important;
+    background-clip: border-box !important;
+    -webkit-background-clip: border-box !important;
+    -webkit-text-fill-color: #ffffff !important;
+    color: #ffffff !important;
+    color: white !important;
+    text-shadow: none !important;
+    position: relative !important;
+    z-index: 30 !important;
+}
+
+/* Make both name lines completely independent */
+.hero-title .hero-name,
+.hero-title-wrapper .hero-name {
+    background: none !important;
+    background-image: none !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+    -webkit-text-fill-color: #ffffff !important;
+    color: #ffffff !important;
+}
+
+/* ==========================================================
+   PROFILE PHOTO — COMPLETELY SEPARATE ON RIGHT
+   ========================================================== */
+
+.hero-avatar.blend-photo {
+    position: absolute !important;
+    top: 50% !important;
+    right: 5vw !important;
+    left: auto !important;
+
+    width: 270px !important;
+    height: 390px !important;
+
+    margin: 0 !important;
+    transform: translateY(-50%) !important;
+
+    z-index: 15 !important;
+
+    border-radius: 28px !important;
+    overflow: hidden !important;
+
+    background: transparent !important;
+    background-image: none !important;
+}
+
+/* Actual photo */
+.hero-avatar.blend-photo img {
+    display: block !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+    object-position: center top !important;
+
+    border-radius: 28px !important;
+
+    opacity: 1 !important;
+    filter: none !important;
+
+    position: relative !important;
+    z-index: 20 !important;
+}
+
+/* Remove every old blending/overlay effect */
+.hero-avatar.blend-photo::before,
+.hero-avatar.blend-photo::after {
+    content: none !important;
+    display: none !important;
+}
+
+/* Keep hero text above background effects */
+.hero-content {
+    position: relative !important;
+    z-index: 25 !important;
+}
+
+/* ==========================================================
+   DESKTOP — PHOTO IN EMPTY RIGHT AREA
+   ========================================================== */
+
+@media (min-width: 1201px) {
+    .hero-avatar.blend-photo {
+        right: 6vw !important;
+        width: 270px !important;
+        height: 390px !important;
+    }
+}
+
+/* ==========================================================
+   LAPTOP
+   ========================================================== */
+
+@media (min-width: 901px) and (max-width: 1200px) {
+    .hero-avatar.blend-photo {
+        right: 3vw !important;
+        width: 240px !important;
+        height: 350px !important;
+    }
+}
+
+/* ==========================================================
+   MOBILE / TABLET
+   ========================================================== */
+
+@media (max-width: 900px) {
+    .hero-avatar.blend-photo {
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        left: auto !important;
+
+        width: 230px !important;
+        height: 330px !important;
+
+        margin: 35px auto !important;
+
+        transform: none !important;
+    }
+}
+
+
+/* =========================================================
+   FINAL OVERRIDE
+   PHOTO = FAR RIGHT EMPTY AREA
+   NAME = PLAIN WHITE TEXT
+   ========================================================= */
+
+/* Completely remove image effect from MITHUN CHAVAN */
+.hero-name,
+.hero-title .hero-name,
+.hero-title-wrapper .hero-name {
+    background: transparent !important;
+    background-image: none !important;
+    background-clip: border-box !important;
+    -webkit-background-clip: border-box !important;
+    -webkit-text-fill-color: #ffffff !important;
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+/* Make sure the heading itself cannot show the photo */
+.hero-title {
+    background-image: none !important;
+    background: transparent !important;
+    -webkit-text-fill-color: #ffffff !important;
+    color: #ffffff !important;
+}
+
+/* =========================================================
+   MOVE PHOTO TO THE EMPTY FAR-RIGHT AREA
+   ========================================================= */
+
+.hero-avatar.blend-photo {
+    position: absolute !important;
+
+    left: auto !important;
+    right: 3vw !important;
+
+    top: 50% !important;
+
+    width: 270px !important;
+    height: 390px !important;
+
+    margin: 0 !important;
+
+    transform: translateY(-50%) !important;
+
+    z-index: 5 !important;
+
+    border-radius: 28px !important;
+    overflow: hidden !important;
+
+    background: transparent !important;
+    background-image: none !important;
+}
+
+/* Actual image */
+.hero-avatar.blend-photo img {
+    width: 100% !important;
+    height: 100% !important;
+
+    display: block !important;
+
+    object-fit: cover !important;
+    object-position: center top !important;
+
+    opacity: 1 !important;
+    filter: none !important;
+
+    border-radius: 28px !important;
+
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+}
+
+/* Remove all old photo overlays */
+.hero-avatar.blend-photo::before,
+.hero-avatar.blend-photo::after {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+}
+
+/* Keep text separate from photo */
+.hero-content {
+    position: relative !important;
+    z-index: 20 !important;
+}
+
+/* Desktop — push photo into far-right blank area */
+@media (min-width: 1201px) {
+    .hero-avatar.blend-photo {
+        right: 3vw !important;
+        left: auto !important;
+        width: 270px !important;
+        height: 390px !important;
+    }
+}
+
+/* Laptop */
+@media (min-width: 901px) and (max-width: 1200px) {
+    .hero-avatar.blend-photo {
+        right: 2vw !important;
+        left: auto !important;
+        width: 240px !important;
+        height: 350px !important;
+    }
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+    .hero-avatar.blend-photo {
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        left: auto !important;
+        transform: none !important;
+
+        width: 230px !important;
+        height: 330px !important;
+
+        margin: 40px auto !important;
+    }
+}
+
+
+/* =========================================================
+   PHOTO — FORCE TO COMPLETELY EMPTY RIGHT SIDE
+   ========================================================= */
+
+.hero-avatar.blend-photo {
+    position: absolute !important;
+
+    /* Ignore the narrow hero content area */
+    left: calc(100vw - 350px) !important;
+    right: auto !important;
+
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+
+    width: 270px !important;
+    height: 390px !important;
+
+    margin: 0 !important;
+
+    z-index: 5 !important;
+
+    border-radius: 28px !important;
+    overflow: hidden !important;
+
+    background: none !important;
+    background-image: none !important;
+}
+
+/* Actual photo */
+.hero-avatar.blend-photo img {
+    display: block !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+    object-position: center top !important;
+
+    opacity: 1 !important;
+    filter: none !important;
+
+    border-radius: 28px !important;
+}
+
+/* No blending */
+.hero-avatar.blend-photo::before,
+.hero-avatar.blend-photo::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* =========================================================
+   NAME — COMPLETELY INDEPENDENT FROM PHOTO
+   ========================================================= */
+
+.hero-name,
+.hero-title .hero-name,
+.hero-title-wrapper .hero-name {
+    background: none !important;
+    background-image: none !important;
+    background-clip: border-box !important;
+    -webkit-background-clip: border-box !important;
+
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+
+    text-shadow: none !important;
+}
+
+/* Desktop */
+@media (min-width: 1201px) {
+    .hero-avatar.blend-photo {
+        left: calc(100vw - 350px) !important;
+        right: auto !important;
+        width: 270px !important;
+        height: 390px !important;
+    }
+}
+
+/* Laptop */
+@media (min-width: 901px) and (max-width: 1200px) {
+    .hero-avatar.blend-photo {
+        left: calc(100vw - 310px) !important;
+        right: auto !important;
+        width: 240px !important;
+        height: 350px !important;
+    }
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+    .hero-avatar.blend-photo {
+        position: relative !important;
+
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+
+        transform: none !important;
+
+        width: 230px !important;
+        height: 330px !important;
+
+        margin: 40px auto !important;
+    }
+}
+
+
+/* =========================================================
+   PROFILE PHOTO — CENTER OF THE EMPTY RIGHT SECTION
+   ========================================================= */
+
+.hero-avatar.blend-photo {
+    position: absolute !important;
+
+    /* Move photo inward from the far-right edge */
+    left: auto !important;
+    right: 11vw !important;
+
+    top: 50% !important;
+
+    width: 270px !important;
+    height: 390px !important;
+
+    margin: 0 !important;
+
+    /* 3D floating animation */
+    transform: translateY(-50%) translate3d(0, 0, 0) rotateY(0deg) !important;
+
+    z-index: 5 !important;
+
+    border-radius: 28px !important;
+    overflow: hidden !important;
+
+    background: transparent !important;
+    background-image: none !important;
+
+    /* Smooth 3D movement */
+    animation: mithunPhotoFloat 5s ease-in-out infinite !important;
+
+    transform-style: preserve-3d !important;
+    perspective: 1000px !important;
+}
+
+/* Actual image */
+.hero-avatar.blend-photo img {
+    display: block !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+    object-position: center top !important;
+
+    opacity: 1 !important;
+    filter: none !important;
+
+    border-radius: 28px !important;
+
+    transform: translateZ(20px) !important;
+
+    transition: transform 0.6s ease !important;
+}
+
+/* Subtle 3D hover effect */
+.hero-avatar.blend-photo:hover img {
+    transform: translateZ(35px) scale(1.035) !important;
+}
+
+/* Remove old blending effects */
+.hero-avatar.blend-photo::before,
+.hero-avatar.blend-photo::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* =========================================================
+   FLOATING 3D ANIMATION
+   ========================================================= */
+
+@keyframes mithunPhotoFloat {
+
+    0% {
+        transform:
+            translateY(-50%)
+            translate3d(0, 0, 0)
+            rotateY(-2deg)
+            rotateZ(0deg) !important;
+    }
+
+    25% {
+        transform:
+            translateY(calc(-50% - 10px))
+            translate3d(0, -3px, 0)
+            rotateY(1deg)
+            rotateZ(0.4deg) !important;
+    }
+
+    50% {
+        transform:
+            translateY(-50%)
+            translate3d(0, 0, 15px)
+            rotateY(2deg)
+            rotateZ(0deg) !important;
+    }
+
+    75% {
+        transform:
+            translateY(calc(-50% + 10px))
+            translate3d(0, 3px, 0)
+            rotateY(-1deg)
+            rotateZ(-0.4deg) !important;
+    }
+
+    100% {
+        transform:
+            translateY(-50%)
+            translate3d(0, 0, 0)
+            rotateY(-2deg)
+            rotateZ(0deg) !important;
+    }
+}
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 1201px) {
+    .hero-avatar.blend-photo {
+        right: 11vw !important;
+        left: auto !important;
+        width: 270px !important;
+        height: 390px !important;
+    }
+}
+
+/* =========================================================
+   LAPTOP
+   ========================================================= */
+
+@media (min-width: 901px) and (max-width: 1200px) {
+    .hero-avatar.blend-photo {
+        right: 7vw !important;
+        left: auto !important;
+        width: 240px !important;
+        height: 350px !important;
+    }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+    .hero-avatar.blend-photo {
+        position: relative !important;
+
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+
+        width: 230px !important;
+        height: 330px !important;
+
+        margin: 40px auto !important;
+
+        transform: none !important;
+
+        animation: mithunMobileFloat 5s ease-in-out infinite !important;
+    }
+}
+
+@keyframes mithunMobileFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotateZ(0deg) !important;
+    }
+
+    50% {
+        transform: translateY(-10px) rotateZ(1deg) !important;
+    }
+}
+
+/* =========================================================
+   FINAL HERO PHOTO POSITION — BESIDE NAME / 3D FLOATING
+   ========================================================= */
+
+.hero-avatar.blend-photo {
+    position: absolute !important;
+
+    /* Put photo in the empty space beside the name */
+    right: 16vw !important;
+    top: 50% !important;
+
+    width: 290px !important;
+    height: 390px !important;
+
+    transform: translateY(-50%) !important;
+
+    z-index: 5 !important;
+
+    /* Remove any blend effect that puts photo through the name */
+    mix-blend-mode: normal !important;
+
+    border-radius: 28px !important;
+    overflow: hidden !important;
+
+    /* 3D appearance */
+    perspective: 1000px !important;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.45),
+        0 0 40px rgba(190, 80, 255, 0.12) !important;
+
+    animation: heroPhotoFloat 5s ease-in-out infinite !important;
+
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease !important;
+}
+
+
+/* Photo itself */
+.hero-avatar.blend-photo img {
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+
+    display: block !important;
+
+    mix-blend-mode: normal !important;
+
+    border-radius: 28px !important;
+
+    transform: scale(1.02) !important;
+
+    transition:
+        transform 0.7s ease,
+        filter 0.7s ease !important;
+}
+
+
+/* Floating 3D movement */
+@keyframes heroPhotoFloat {
+
+    0% {
+        transform:
+            translateY(-50%)
+            rotateY(-3deg)
+            rotateX(1deg)
+            translateZ(0);
+    }
+
+    25% {
+        transform:
+            translateY(calc(-50% - 10px))
+            rotateY(2deg)
+            rotateX(-1deg)
+            translateZ(10px);
+    }
+
+    50% {
+        transform:
+            translateY(-50%)
+            rotateY(4deg)
+            rotateX(1deg)
+            translateZ(15px);
+    }
+
+    75% {
+        transform:
+            translateY(calc(-50% + 10px))
+            rotateY(1deg)
+            rotateX(-1deg)
+            translateZ(8px);
+    }
+
+    100% {
+        transform:
+            translateY(-50%)
+            rotateY(-3deg)
+            rotateX(1deg)
+            translateZ(0);
+    }
+}
+
+
+/* 3D hover effect */
+.hero-avatar.blend-photo:hover {
+    animation-play-state: paused !important;
+
+    transform:
+        translateY(-50%)
+        rotateY(-8deg)
+        rotateX(4deg)
+        scale(1.04) !important;
+
+    box-shadow:
+        0 35px 90px rgba(0, 0, 0, 0.55),
+        0 0 55px rgba(190, 80, 255, 0.22) !important;
+}
+
+
+.hero-avatar.blend-photo:hover img {
+    transform: scale(1.06) !important;
+}
+
+
+/* =========================================================
+   DESKTOP — KEEP PHOTO IN THE EMPTY SPACE
+   ========================================================= */
+
+@media (min-width: 1101px) {
+
+    .hero-avatar.blend-photo {
+        right: 16vw !important;
+        top: 50% !important;
+
+        width: 290px !important;
+        height: 390px !important;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) and (min-width: 761px) {
+
+    .hero-avatar.blend-photo {
+        right: 6vw !important;
+        top: 50% !important;
+
+        width: 250px !important;
+        height: 340px !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .hero-avatar.blend-photo {
+        position: relative !important;
+
+        right: auto !important;
+        top: auto !important;
+
+        width: 220px !important;
+        height: 290px !important;
+
+        margin: 30px auto !important;
+
+        transform: none !important;
+
+        animation: heroPhotoMobileFloat 5s ease-in-out infinite !important;
+    }
+
+    @keyframes heroPhotoMobileFloat {
+
+        0% {
+            transform: translateY(0) rotateY(-2deg);
+        }
+
+        50% {
+            transform: translateY(-8px) rotateY(3deg);
+        }
+
+        100% {
+            transform: translateY(0) rotateY(-2deg);
+        }
+    }
+}
+
+/* =========================================================
+   HERO PHOTO — EXACTLY IN THE BLANK SPACE BESIDE NAME
+   ========================================================= */
+
+.hero-avatar.blend-photo {
+    position: absolute !important;
+
+    /* EXACT horizontal position */
+    left: 58vw !important;
+    right: auto !important;
+
+    /* Vertical position */
+    top: 50% !important;
+
+    width: 290px !important;
+    height: 390px !important;
+
+    /* Important: NO overlap with name */
+    z-index: 10 !important;
+    mix-blend-mode: normal !important;
+
+    border-radius: 28px !important;
+    overflow: hidden !important;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.45),
+        0 0 40px rgba(190, 80, 255, 0.15) !important;
+
+    /* 3D floating animation */
+    animation: mithunPhotoFloat 5s ease-in-out infinite !important;
+
+    transition: box-shadow 0.4s ease !important;
+}
+
+
+/* PHOTO */
+.hero-avatar.blend-photo img {
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+
+    display: block !important;
+
+    border-radius: 28px !important;
+
+    mix-blend-mode: normal !important;
+
+    transform: scale(1.02) !important;
+}
+
+
+/* =========================================================
+   3D FLOATING ANIMATION
+   ========================================================= */
+
+@keyframes mithunPhotoFloat {
+
+    0% {
+        transform:
+            translateY(-50%)
+            rotateY(-4deg)
+            rotateX(2deg);
+    }
+
+    50% {
+        transform:
+            translateY(calc(-50% - 12px))
+            rotateY(4deg)
+            rotateX(-2deg);
+    }
+
+    100% {
+        transform:
+            translateY(-50%)
+            rotateY(-4deg)
+            rotateX(2deg);
+    }
+}
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 1201px) {
+
+    .hero-avatar.blend-photo {
+        left: 58vw !important;
+        right: auto !important;
+
+        width: 290px !important;
+        height: 390px !important;
+    }
+}
+
+
+/* =========================================================
+   SMALL DESKTOP / LAPTOP
+   ========================================================= */
+
+@media (max-width: 1200px) and (min-width: 761px) {
+
+    .hero-avatar.blend-photo {
+        left: 60vw !important;
+        right: auto !important;
+
+        width: 250px !important;
+        height: 340px !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .hero-avatar.blend-photo {
+        position: relative !important;
+
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+
+        width: 220px !important;
+        height: 290px !important;
+
+        margin: 30px auto !important;
+
+        transform: none !important;
+
+        animation: mithunPhotoMobileFloat 5s ease-in-out infinite !important;
+    }
+
+    @keyframes mithunPhotoMobileFloat {
+
+        0% {
+            transform: translateY(0) rotateY(-3deg);
+        }
+
+        50% {
+            transform: translateY(-10px) rotateY(3deg);
+        }
+
+        100% {
+            transform: translateY(0) rotateY(-3deg);
+        }
+    }
+}
