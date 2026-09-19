@@ -73,6 +73,37 @@ I am **Mithun Chavan**, a BCA student and junior software developer focused on b
 * GitHub
 * Netlify
 
+  ## 📸 Screenshots
+
+### 🏠 Home
+
+![Portfolio Home](screenshots/portfolio-home.png)
+
+---
+
+### 👨‍💻 About
+
+![Portfolio About](screenshots/portfolio-about.png)
+
+---
+
+### 💼 Experience
+
+![Portfolio Experience](screenshots/portfolio-experience.png)
+
+---
+
+### 🛠️ Skills
+
+![Portfolio Skills](screenshots/portfolio-skills.png)
+
+---
+
+### 📞 Contact
+
+![Portfolio Contact](screenshots/portfolio-contact.png)
+
+
 ---
 
 ## 📁 Project Structure
